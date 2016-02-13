@@ -1,0 +1,37 @@
+sudo: required
+language: python
+addons:
+  postgresql: "9.4"
+services:
+  - postgresql
+python:
+    - "3.4"
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+env:
+    - DJANGO=1.8 DB=postgres
+
+before_install:
+    - export DJANGO_SETTINGS_MODULE=wineoh_project.settings.testing
+
+before_script:
+    - psql -c 'create database test_winoh_db;' -U postgres
+
+# install dependencies
+install:
+    - "pip install -r requirements/production.txt"
+
+# run tests
+script:
+    python  hola.py
+    # - python manage.py test
+    # - python manage.py functional_tests.py
+
+# notifications:
+#   email:
+#     recipients:
+#       - random@email.com
+#     on_success: never
+#     on_failure: always
