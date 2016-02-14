@@ -21,7 +21,7 @@ before_script:
 
 # install dependencies
 install:
-    - "pip install -r requirements/production.txt"
+    - "pip install -r requirements/testing.txt"
 
 # run tests
 script:
