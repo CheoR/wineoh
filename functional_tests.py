@@ -16,7 +16,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8000')
 
         # She notices the funny page title
-        self.assertIn('Winoh', self.browser.title)
+        self.assertIn('Wineoh', self.browser.title)
         self.fail('Finish the test!')
 
     # She is invited to enter add a review straight away
