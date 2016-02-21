@@ -33,12 +33,16 @@ SECRET_KEY = get_env_variable('SECRET_KEY')
 # Application definition
 
 INSTALLED_APPS = (
+    # default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third-party
+    # mine
+    'add_review_app',
 )
 
 MIDDLEWARE_CLASSES = (
